@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Coffee Mix</string>
+    <string name="signup">SIGNUP</string>
+    <string name="login">LOGIN</string>
+    <string name="continue_facebook">CONTINUE WITH FACEBOOK</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="have_account">Do you have an account? Login</string>
+    <string name="log_in">Login</string>
+    <string name="welcome_back">Welcome Back</string>
+</resources>

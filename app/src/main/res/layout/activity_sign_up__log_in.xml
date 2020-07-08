@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp_LogInActivity"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/choose_signup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/signup"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:onClick="openSignUp"/>
+
+    <Button
+        android:id="@+id/choose_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/login"
+        android:background="@drawable/button_border"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:onClick="openLogin"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/continue_facebook"
+        android:drawableStart="@drawable/icon_facebook"
+        android:background="@drawable/fb_button_border"
+        android:textColor="@color/fb"
+        android:paddingStart="31dp"
+        android:paddingEnd="31dp"
+        android:textSize="18sp"/>
+
+</LinearLayout>
