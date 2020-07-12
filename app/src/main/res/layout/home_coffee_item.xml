@@ -80,7 +80,7 @@
                 android:src="@drawable/star_grey"
                 android:contentDescription="@string/star_icon"
                 android:layout_marginStart="3dp"/>
-            <view
+            <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
