@@ -12,5 +12,26 @@
     <string name="good_morning">Good Morning</string>
     <string name="good_morning_coffee">Good morning coffee:</string>
     <string name="white_mocha">White Mocha</string>
+    <string name="cappuccino">Cappuccino</string>
     <string name="name_coffee">Amir ☕</string>
+    <string name="coffee_image">An image of a cup of coffee</string>
+    <string name="heart_icon">A heart shaped icon</string>
+    <string name="arrow_icon">An arrow icon</string>
+    <string name="star_icon">A star icon</string>
+    <string name="guy_icon">An image of a guy beside a cup of coffee</string>
+    <string name="no_fav">You don\'t have favourite coffees yet</string>
+    <string name="latest">Latest Orders</string>
+    <string name="starbucks">Starbucks</string>
+    <string name="logo">Coffee shop logo</string>
+    <string name="_5_7_2019">5/7/2019</string>
+    <string name="_09_18_am">09:18 am</string>
+    <string name="your_rate">Your rate:</string>
+    <string name="rate">4.0</string>
+    <string name="price50">$50</string>
+    <string name="price30">$30</string>
+    <string name="price23">$23</string>
+    <string name="price70">$70</string>
+    <string name="dunk">Dunkin\' Donuts</string>
+    <string name="baskin">Baskin-Robbins</string>
+    <string name="kreme">Krispy Kreme</string>
 </resources>

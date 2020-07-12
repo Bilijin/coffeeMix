@@ -7,6 +7,12 @@
     android:orientation="vertical"
     android:layout_margin="32dp">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/coffee_guy"
+        android:contentDescription="@string/guy_icon"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
