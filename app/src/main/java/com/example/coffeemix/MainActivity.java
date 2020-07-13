@@ -13,7 +13,7 @@ import android.os.Bundle;
 
 public class MainActivity extends FragmentActivity {
 
-    private static final int pages = 2;
+    private static final int pages = 3;
     private ViewPager mPager;
     private PagerAdapter pagerAdapter;
 
@@ -38,6 +38,8 @@ public class MainActivity extends FragmentActivity {
                 case 0:
                     return new HomeFragment();
                 case 1:
+                    return new BrowseFragment();
+                case 2:
                     return new OrdersFragment();
             }
             return null;

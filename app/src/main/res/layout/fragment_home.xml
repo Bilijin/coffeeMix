@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HomeFragment"
-    android:layout_margin="16dp">
+    android:layout_margin="16dp"
+    android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +34,9 @@
         android:id="@+id/coffee_recycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/home_coffee_item" />
+        tools:listitem="@layout/home_coffee_item"
+        android:paddingTop="16dp"
+        android:paddingBottom="32dp"/>
 
     <ImageView
         android:layout_width="wrap_content"

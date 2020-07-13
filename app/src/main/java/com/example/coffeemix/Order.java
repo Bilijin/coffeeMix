@@ -4,6 +4,8 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Integer.parseInt;
+
 public class Order {
     private String mStoreName;
     private String mDate;
@@ -12,13 +14,13 @@ public class Order {
     private int mRate;
     private int mLogo;
 
-    Order(int logo, String storeName, String date, String time, int rate,int price){
+    Order(int logo, String storeName, String date, String time, int rate,String price){
         mLogo = logo;
         mStoreName = storeName;
         mDate = date;
         mTime = time;
         mRate = rate;
-        mPrice = (NumberFormat.getCurrencyInstance().format(price));
+        mPrice = (NumberFormat.getCurrencyInstance().format(parseInt(price)));
     }
 
     public String getmStoreName() {

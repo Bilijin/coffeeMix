@@ -2,28 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:name="com.example.coffeemix.OrdersFragment"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:orientation="vertical">
-
     <TextView
         android:layout_margin="16dp"
-        android:id="@+id/latest_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="top"
-        android:text="@string/latest"
+        android:text="@string/browse"
         android:textColor="#000"
-        android:textSize="30sp" />
+        android:textSize="30sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/order_list"
-        android:name="com.example.coffeemix.OrdersFragment"
+        android:id="@+id/browse_list"
+        android:name="com.example.coffeemix.BrowseFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="LinearLayoutManager"
-        tools:context=".OrdersFragment"
-        tools:listitem="@layout/fragment_orders" />
+        tools:context=".BrowseFragment"
+        tools:listitem="@layout/fragment_browse_item" />
 </LinearLayout>
