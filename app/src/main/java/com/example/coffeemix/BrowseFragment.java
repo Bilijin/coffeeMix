@@ -36,12 +36,10 @@ public class BrowseFragment extends Fragment {
     public BrowseFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
-    public static BrowseFragment newInstance(int columnCount) {
+
+    public static BrowseFragment newInstance() {
         BrowseFragment fragment = new BrowseFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
         return fragment;
     }
@@ -58,7 +56,7 @@ public class BrowseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_browse, container, false);
+        View browseView = inflater.inflate(R.layout.fragment_browse, container, false);
 
         beverages = new ArrayList<>();
         beverages.add(new Coffee(getString(R.string.coffee),R.drawable.coffee));
@@ -71,9 +69,9 @@ public class BrowseFragment extends Fragment {
         beverages.add(new Coffee(getString(R.string.ice_coffee),R.drawable.ice_coffee));
 
         // Set the adapter
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.browse_list);
+            RecyclerView recyclerView = browseView.findViewById(R.id.browse_list);
             recyclerView.setLayoutManager(new GridLayoutManager(this.getContext(), mColumnCount));
             recyclerView.setAdapter(new MyBeverageRecyclerViewAdapter(beverages));
-        return view;
+        return browseView;
     }
 }

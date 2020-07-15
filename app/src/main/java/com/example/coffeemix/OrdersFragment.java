@@ -35,12 +35,9 @@ public class OrdersFragment extends Fragment {
     public OrdersFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
-    public static OrdersFragment newInstance(int columnCount) {
+    public static OrdersFragment newInstance() {
         OrdersFragment fragment = new OrdersFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
         return fragment;
     }
@@ -57,7 +54,7 @@ public class OrdersFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_orders_list, container, false);
+        View orderView = inflater.inflate(R.layout.fragment_orders_list, container, false);
 
         orders.add(new Order(R.drawable.dunkin_donuts,getString(R.string.dunk),getString(R.string._5_7_2019),getString(R.string._09_18_am),R.string.rate,getString(R.string.price50)));
         orders.add(new Order(R.drawable.baskin_robbins,getString(R.string.dunk),getString(R.string._5_7_2019),getString(R.string._09_18_am),R.string.rate,getString(R.string.price30)));
@@ -70,10 +67,10 @@ public class OrdersFragment extends Fragment {
         orders.add(new Order(R.drawable.krispy_kreme,getString(R.string.kreme),getString(R.string._5_7_2019),getString(R.string._09_18_am),R.string.rate,getString(R.string.price23)));
 
         // Set the adapter
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.order_list);
+            RecyclerView recyclerView = (RecyclerView) orderView.findViewById(R.id.order_list);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);
             recyclerView.setLayoutManager(linearLayoutManager);
             recyclerView.setAdapter(new MyOrdersRecyclerViewAdapter(orders));
-        return view;
+        return orderView;
     }
 }

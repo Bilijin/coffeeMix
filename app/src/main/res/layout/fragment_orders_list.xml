@@ -23,6 +23,7 @@
         android:name="com.example.coffeemix.OrdersFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="40dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".OrdersFragment"
         tools:listitem="@layout/fragment_orders" />

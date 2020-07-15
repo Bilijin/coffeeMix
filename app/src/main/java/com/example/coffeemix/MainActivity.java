@@ -10,44 +10,54 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
-public class MainActivity extends FragmentActivity {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-    private static final int pages = 3;
-    private ViewPager mPager;
-    private PagerAdapter pagerAdapter;
+public class MainActivity extends FragmentActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mPager = (ViewPager) findViewById(R.id.vpgr);
-        pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
-        mPager.setAdapter(pagerAdapter);
+        loadFragment(new HomeFragment());
+
+        bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter{
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
-            super(fm);
+    private boolean loadFragment(Fragment fragment){
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
         }
 
-        @Override
-        public Fragment getItem(int position) {
-            switch (position) {
-                case 0:
-                    return new HomeFragment();
-                case 1:
-                    return new BrowseFragment();
-                case 2:
-                    return new OrdersFragment();
-            }
-            return null;
-        }
+    @Override
 
-        @Override
-        public int getCount() {
-            return pages;
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                fragment = new HomeFragment();
+                break;
+            case R.id.nav_coffee:
+                fragment = new BrowseFragment();
+                break;
+            case R.id.nav_cart:
+                fragment = new CartFragment();
+                break;
+            case R.id.nav_settings:
+                fragment = new SettingsFragment();
+                break;
         }
+        return loadFragment(fragment);
     }
 }

@@ -16,6 +16,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/browse_list"
+        android:paddingBottom="40dp"
         android:name="com.example.coffeemix.BrowseFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

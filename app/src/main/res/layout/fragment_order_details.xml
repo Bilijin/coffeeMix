@@ -1,8 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderDetails">
+    tools:context=".OrderDetails"
+    android:orientation="vertical">
 
-</FrameLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
+        android:contentDescription="@string/coffee_image"
+        android:src="@drawable/img" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_margin="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/white_mocha"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price30"
+            android:textColor="@android:color/black"
+            android:layout_gravity="end|center_vertical"
+            android:textSize="32sp"/>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:contentDescription="@string/star_icon"
+                android:src="@drawable/star_gold"/>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:contentDescription="@string/star_icon"
+                android:src="@drawable/star_gold"/>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:contentDescription="@string/star_icon"
+                android:src="@drawable/star_gold"/>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:contentDescription="@string/star_icon"
+                android:src="@drawable/star_gold"/>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:contentDescription="@string/star_icon"
+                android:src="@drawable/star_gold"/>
+
+
+        </LinearLayout>
+    </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/details"
+        android:textSize="21sp"
+        android:layout_marginStart="16dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="2dp"
+        android:text="@string/texxt"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_margin="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sugar"
+                android:textSize="19sp"
+                android:textColor="#000"
+                android:layout_alignParentBottom="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="bottom">
+                <ImageView
+                    android:id="@+id/no_sugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/cube"
+                    android:src="@drawable/white_square"
+                    android:layout_centerInParent="true"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/slash"
+                    android:src="@drawable/slash"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cube"
+                android:src="@drawable/white_square"
+               android:layout_marginStart="16dp"
+                android:id="@+id/_1cube"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/_2cubes"
+                android:layout_gravity="bottom">
+
+                <ImageView
+                    android:id="@+id/_2cubes1"
+                    android:layout_marginStart="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/cube"
+                    android:src="@drawable/brown_square"/>
+                <ImageView
+                    android:id="@+id/_2cubes2"
+                    android:layout_marginStart="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/cube"
+                    android:src="@drawable/brown_square"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/_3cubes"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="16dp">
+                <ImageView
+                    android:id="@+id/_3cubes1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/cube"
+                    android:src="@drawable/white_square"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"/>
+                <ImageView
+                    android:id="@+id/_3cubes2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/cube"
+                    android:src="@drawable/white_square"
+                    android:layout_alignParentBottom="true"/>
+                <ImageView
+                    android:id="@+id/_3cubes3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/cube"
+                    android:src="@drawable/white_square"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="@string/size"
+            android:textSize="19sp"
+            android:textColor="#000" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cup_icon"
+                android:layout_weight="1"
+                android:src="@drawable/small_cup"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cup_icon"
+                android:layout_weight="1"
+                android:src="@drawable/medium_cup"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/cup_icon"
+                android:layout_weight="1"
+                android:src="@drawable/big_cup"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/add_to_cart"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/button_border"/>
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/order"
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+</LinearLayout>

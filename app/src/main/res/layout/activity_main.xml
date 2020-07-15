@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vpgr"
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/vpgr"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_width="match_parent">-->
+
+<!--    </androidx.viewpager.widget.ViewPager>-->
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-    </androidx.viewpager.widget.ViewPager>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        app:menu="@menu/navigation"/>
 
-</LinearLayout>
+</RelativeLayout>
