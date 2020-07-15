@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -29,6 +31,12 @@ public class SettingsFragment extends Fragment {
     private RelativeLayout editPhoneLayout;
     private TextView editAddress;
     private TextView editPhone;
+    private Button saveAddress;
+    private Button savePhone;
+    private EditText phoneEditText;
+    private EditText addressEditText;
+    private TextView address;
+    private TextView phone;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -71,6 +79,12 @@ public class SettingsFragment extends Fragment {
         editPhoneLayout = settingsView.findViewById(R.id.edit_phone_layout);
         editPhone = settingsView.findViewById(R.id.edit_phone);
         editAddress = settingsView.findViewById(R.id.edit_address);
+        saveAddress = settingsView.findViewById(R.id.save_address);
+        savePhone = settingsView.findViewById(R.id.save_phone);
+        phoneEditText = settingsView.findViewById(R.id.phone_edit);
+        addressEditText = settingsView.findViewById(R.id.address_edit);
+        address = settingsView.findViewById(R.id.address);
+        phone = settingsView.findViewById(R.id.phone_no);
 
         editPhoneLayout.setVisibility(View.GONE);
         editAddressLayout.setVisibility(View.GONE);
@@ -85,6 +99,20 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 editAddressLayout.setVisibility(View.VISIBLE);
+            }
+        });
+        saveAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                address.setText(addressEditText.getText());
+                editAddressLayout.setVisibility(View.GONE);
+            }
+        });
+        savePhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                phone.setText(phoneEditText.getText());
+                editPhoneLayout.setVisibility(View.GONE);
             }
         });
         return settingsView;
