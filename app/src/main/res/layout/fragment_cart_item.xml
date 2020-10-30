@@ -130,12 +130,13 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:text="@string/one"
-            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textColor="#000"
             android:textSize="24sp"
             android:gravity="center"
             android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
 
         <TextView
             android:id="@+id/plus_cart"
@@ -156,7 +157,11 @@
             android:layout_height="wrap_content"
             android:text="@string/price30"
             android:textSize="24sp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
             android:layout_gravity="center"
+            android:gravity="end"
             android:id="@+id/cart_item_price"/>
     </LinearLayout>
 </LinearLayout>

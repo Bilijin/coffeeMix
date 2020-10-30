@@ -1,5 +1,6 @@
 package com.example.coffeemix;
 
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +22,9 @@ public class OrderDetails extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    ImageView img;
+    TextView name;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -59,6 +65,14 @@ public class OrderDetails extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order_details, container, false);
+        View detailsView = inflater.inflate(R.layout.fragment_order_details, container, false);
+        img = detailsView.findViewById(R.id.order_details_image);
+        name = detailsView.findViewById(R.id.order_details_name);
+        Bundle b = this.getArguments();
+        if (b != null) {
+        img.setImageResource(b.getInt("image"));
+        name.setText(b.getString("coffeeName"));
+        }
+        return detailsView;
     }
 }

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -81,10 +82,21 @@ public class HomeFragment extends Fragment {
         drinks.add(new Coffee(getString(R.string.cappuccino),R.drawable.coffee2));
 
         recyclerView = view.findViewById(R.id.coffee_recycler);
-        coffeeAdapter = new CoffeeAdapter(drinks);
+        coffeeAdapter = new CoffeeAdapter(drinks, getActivity());
         LinearLayoutManager llm = new LinearLayoutManager(this.getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(llm);
         recyclerView.setAdapter(coffeeAdapter);
+
+        recyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OrderDetails nextFrag= new OrderDetails();
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.home_fragment, nextFrag)
+                        .commit();
+            }
+        });
         return view;
     }
 }

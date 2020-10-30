@@ -1,7 +1,10 @@
 package com.example.coffeemix;
 
+import android.location.Address;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -11,6 +14,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.text.NumberFormat;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,14 +36,9 @@ public class SettingsFragment extends Fragment {
     private String mParam2;
     private RelativeLayout editAddressLayout;
     private RelativeLayout editPhoneLayout;
-    private TextView editAddress;
-    private TextView editPhone;
-    private Button saveAddress;
-    private Button savePhone;
-    private EditText phoneEditText;
-    private EditText addressEditText;
-    private TextView address;
-    private TextView phone;
+    private TextView editAddress, editPhone, phone, settingsTotal, address;
+    private Button saveAddress, savePhone;
+    private EditText phoneEditText, addressEditText;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -60,12 +62,16 @@ public class SettingsFragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+//            address.setText(savedInstanceState.getCharSequence("Address"));
+//            phone.setText(savedInstanceState.getCharSequence("Phone"));
         }
     }
 
@@ -74,6 +80,12 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View settingsView = inflater.inflate(R.layout.fragment_settings, container, false);
+        address = settingsView.findViewById(R.id.address);
+        phone = settingsView.findViewById(R.id.phone_no);
+        if (savedInstanceState != null) {
+            address.setText(savedInstanceState.getCharSequence("Address").toString());
+            phone.setText(savedInstanceState.getCharSequence("Phone"));
+        }
 
         editAddressLayout = settingsView.findViewById(R.id.edit_address_layout);
         editPhoneLayout = settingsView.findViewById(R.id.edit_phone_layout);
@@ -83,8 +95,13 @@ public class SettingsFragment extends Fragment {
         savePhone = settingsView.findViewById(R.id.save_phone);
         phoneEditText = settingsView.findViewById(R.id.phone_edit);
         addressEditText = settingsView.findViewById(R.id.address_edit);
-        address = settingsView.findViewById(R.id.address);
-        phone = settingsView.findViewById(R.id.phone_no);
+
+        settingsTotal = settingsView.findViewById(R.id.settings_total_price);
+
+        String totalPrice = settingsTotal.getText().toString();
+        settingsTotal.setText(NumberFormat.getCurrencyInstance().format(parseInt(totalPrice)));
+
+//        phone.setText("21, Riverbase close");
 
         editPhoneLayout.setVisibility(View.GONE);
         editAddressLayout.setVisibility(View.GONE);
@@ -117,4 +134,19 @@ public class SettingsFragment extends Fragment {
         });
         return settingsView;
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        state.putCharSequence("Address", address.getText());
+        state.putCharSequence("Phone", phone.getText());
+    }
+
+
+
+//    @Override
+//    public void onRestoreInstanceState(Bundle state) {
+//        super.onRestoreInstanceState(state);
+//        phone.setText(state.getCharSequence("Address"));
+//    }
 }

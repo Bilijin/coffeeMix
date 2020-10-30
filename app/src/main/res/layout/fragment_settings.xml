@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:layout_margin="32dp"
     android:orientation="vertical"
-    tools:context=".SettingsFragment">
+    tools:context=".SettingsFragment"
+    android:tag="fsettings"
+    android:id="@+id/original_settings">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -123,5 +125,24 @@
             android:text="@string/save"
             android:textColor="#ffffff"/>
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="21sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text="@string/total_money_spent"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/settings_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/price300"/>
 
 </LinearLayout>

@@ -17,10 +17,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends FragmentActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
+//    private SettingsFragment mySettingsFragment;
+//    private HomeFragment myHomeFragment;
+//    private BrowseFragment myBrowseFragment;
+//    private OrdersFragment myOrdersFragment;
+//    private CartFragment myCartFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         loadFragment(new HomeFragment());
@@ -29,7 +35,8 @@ public class MainActivity extends FragmentActivity implements BottomNavigationVi
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
-    private boolean loadFragment(Fragment fragment){
+
+    public boolean loadFragment(Fragment fragment){
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -41,7 +48,6 @@ public class MainActivity extends FragmentActivity implements BottomNavigationVi
         }
 
     @Override
-
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
         switch (item.getItemId()) {
